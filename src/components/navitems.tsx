@@ -9,7 +9,7 @@ const NavItems = ({
 }) => {
     return (
         <a href={`/${repo}`}>
-            <div className="hover:text-sky-800 hover:cursor-pointer flex px h-full justify-center px-1 mx-8 font-medium">{name}</div>
+            <div className="hover:text-sky-800 hover:cursor-pointer flex px h-full justify-center px-1 mx-8 font-normal text-lg">{name}</div>
         </a>
     )
 }
