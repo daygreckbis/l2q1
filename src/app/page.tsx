@@ -7,6 +7,7 @@ import Cart from "@/components/cart";
 export default function Home() {
   return(
   <MaxWidthWrapper>
+    
     <div className="justify-center items-center m-auto bg-transparent">
 
       
@@ -15,8 +16,6 @@ export default function Home() {
         <h1 className="absolute z-49 mt-[20vh] text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center bg-transparent ml-[12.5vw] italic [text-shadow:_0_1.5px_0_rgb(0_0_170_/_80%)]">L'avenir se décide maintenant,</h1>
       </div>
       <SlideWrapper/>
-
-      
       <p className="mt-10 relative ml-[46.5vw] items-center justify-center align-middle">Hello Wordl</p>
       
     </div>
