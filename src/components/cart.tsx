@@ -1,11 +1,13 @@
 import { SeparatorHorizontal, ShoppingCart } from "lucide-react"
 import { Button } from "./ui/button"
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./ui/sheet"
+import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTrigger } from "./ui/sheet"
 import { Separator } from "./ui/separator";
+import Link from "next/link";
 
 
 const Cart = () => {
 
+    const remiseP = 0;
     const reduc = true;
     const shippingCost = 0;
     let shippingText = "";
@@ -18,7 +20,7 @@ const Cart = () => {
 
     const nbItems = 2;
     return(
-        <Sheet>
+        <Sheet className="outline-none">
             <SheetTrigger className="flex flex-row items-center m-0" asChild>
                 <div className="pl-2.5 w-[4.5vh] h-[4.4vh] sm:h-11 sm:w-16 bg-black hover:bg-gray-800 hover:cursor-pointer rounded-md items-center justify-center align-middle">
                     <ShoppingCart className="text-white"/>
@@ -27,7 +29,7 @@ const Cart = () => {
                 
             </SheetTrigger>
             <SheetContent>
-                <SheetHeader className="text-lg mb-2.5">
+                <SheetHeader className="text-lg mb-2.5 justify-center align-middle text-center items-center">
                     Panier ({nbItems})
                 </SheetHeader>
                 {nbItems > 0 ? (
@@ -45,7 +47,7 @@ const Cart = () => {
                                 </div>
                                 <div className="flex flex-row ">
                                     <span className="flex-1">Remise</span>
-                                    <span>0%</span>
+                                    <span>{remiseP}%</span>
                                 </div>
                             </>
                         )}
@@ -61,7 +63,7 @@ const Cart = () => {
                         <Separator className="border border-grey-500 mt-2.5 mb-2.5"/>
                         <div className="flex flex-row ">
                             <span className="flex-1">TOTAL</span>
-                            <span>0</span>
+                            <span>AA</span>
                         </div>
                       
                     </>
@@ -73,6 +75,13 @@ const Cart = () => {
                             <span className="text-[#4a4a4a] ml-[105px] px-2.5">Rien à voir :{"("}</span>
                         </div>
                 </>)}
+                <SheetFooter className="mt-2.5 outline-none">
+                    <SheetTrigger asChild className="w-full outline-none">
+                        <Link href='/cart' className="outline-none">
+                            <Button className="w-full outline-none">Paiement</Button>
+                        </Link>
+                    </SheetTrigger>
+                </SheetFooter>
             </SheetContent>
         </Sheet>
     )
